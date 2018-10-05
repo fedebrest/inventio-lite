@@ -62,7 +62,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class=""><?php if(isset($_SESSION["user_id"]) ){ echo UserData::getById($_SESSION["user_id"])->name; 
+                  <span class=""><?php if(isset($_SESSION["user_id"]) ){ echo UserData::getById($_SESSION["user_id"])->name;
 
                   }?> <b class="caret"></b> </span>
 
@@ -73,7 +73,7 @@
                       <a href="http://evilnapsis.com/" target="_blank" class="">Ir a Evilnapsis</a>
                       <a href="http://evilnapsis.com/product/inventio-max/" target="_blank" class="">Ver Inventio Max</a>
                   </li>
-                  
+
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
@@ -167,7 +167,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 3.0
         </div>
-        <strong>Copyright &copy; 2016 <a href="http://evilnapsis.com/" target="_blank">Evilnapsis</a></strong>
+        <strong>Copyright &copy; 2016 Fede Brest</strong>
       </footer>
       <?php else:?>
 <div class="login-box">
@@ -192,7 +192,7 @@
           </div>
         </form>
       </div><!-- /.login-box-body -->
-    </div><!-- /.login-box -->  
+    </div><!-- /.login-box -->
       <?php endif;?>
 
 
@@ -244,4 +244,3 @@
           fixed layout. -->
   </body>
 </html>
-
