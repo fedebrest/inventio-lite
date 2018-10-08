@@ -9,19 +9,19 @@ class Action {
 	/**
 	* @function load
 	* @brief la funcion load carga una vista correspondiente a un modulo
-	**/	
+	**/
 	public static function load($action){
 		// Module::$module;
-		
+
 		if(!isset($_GET['action'])){
 			include "core/app/action/".$action."-action.php";
 		}else{
 
 
 			if(Action::isValid()){
-				include "core/app/action/".$_GET['action']."-action.php";				
+				include "core/app/action/".$_GET['action']."-action.php";
 			}else{
-				Action::Error("<b>404 NOT FOUND</b> Action <b>".$_GET['action']."</b> folder  !! - <a href='http://evilnapsis.com/legobox/help/' target='_blank'>Help</a>");
+				Action::Error("<b>404 NOT FOUND</b> Action <b>".$_GET['action']."</b> folder  !! - <a href='./images/404.png' target='_blank'>Help</a>");
 			}
 
 
@@ -32,7 +32,7 @@ class Action {
 	/**
 	* @function isValid
 	* @brief valida la existencia de una vista
-	**/	
+	**/
 	public static function isValid(){
 		$valid=false;
 		if(file_exists($file = "core/app/action/".$_GET['action']."-action.php")){

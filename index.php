@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @author evilnapsis
+* @author Fede Brest
 **/
 
 define("ROOT", dirname(__FILE__));

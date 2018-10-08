@@ -69,11 +69,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
-                  <li class="">
-                      <a href="http://evilnapsis.com/" target="_blank" class="">Ir a Evilnapsis</a>
-                      <a href="http://evilnapsis.com/product/inventio-max/" target="_blank" class="">Ver Inventio Max</a>
-                  </li>
-
+      
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
