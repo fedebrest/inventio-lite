@@ -69,11 +69,15 @@
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
-      
+
                   <!-- Menu Footer-->
-                  <li class="user-footer">
+                <!--  <li class="">
+                        <a href="http://evilnapsis.com/" target="_blank" class="">Ir a Evilnapsis</a>
+                        <a href="http://evilnapsis.com/product/inventio-max/" target="_blank" class="">Ver Inventio Max</a>
+                      </li> -->
+                  <li class="">
                     <div class="pull-right">
-                      <a href="./logout.php" class="btn btn-default btn-flat">Salir</a>
+                      <a href="./logout.php" class="btn btn-default btn-flat">Cerrar Sesión</a>
                     </div>
                   </li>
                 </ul>
@@ -140,7 +144,7 @@
               <a href="#"><i class='fa fa-cog'></i> <span>Administracion</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=users">Usuarios</a></li>
-                <li><a href="./?view=settings">Configuracion</a></li>
+              <!--  <li><a href="./?view=settings">Configuracion</a></li> -->
               </ul>
             </li>
           <?php endif;?>
