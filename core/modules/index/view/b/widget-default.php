@@ -9,7 +9,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu pull-right" role="menu">
-    <li><a href="report/box-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li>
+  <!--  <li><a href="report/box-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li> -->
   </ul>
 </div>
 </div>
@@ -33,7 +33,7 @@ $total_total = 0;
 
 	<tr>
 		<td style="width:30px;">
-<a href="./index.php?view=onesell&id=<?php echo $sell->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-arrow-right"></i></a>			
+<a href="./index.php?view=onesell&id=<?php echo $sell->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-arrow-right"></i></a>
 
 
 <?php
@@ -51,7 +51,7 @@ $total=0;
 		$total_total += $total;
 		echo "<b>$ ".number_format($total,2,".",",")."</b>";
 
-?>			
+?>
 
 		</td>
 		<td><?php echo $sell->created_at; ?></td>

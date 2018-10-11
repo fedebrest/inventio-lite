@@ -6,7 +6,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/boxhistory-word.php">Word 2007 (.docx)</a></li>
+  <!--  <li><a href="report/boxhistory-word.php">Word 2007 (.docx)</a></li> -->
   </ul>
 </div>
 		<h1><i class='fa fa-archive'></i> Historial de Caja</h1>
@@ -33,7 +33,7 @@ $sells = SellData::getByBoxId($box->id);
 
 	<tr>
 		<td style="width:30px;">
-<a href="./index.php?view=b&id=<?php echo $box->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-arrow-right"></i></a>			
+<a href="./index.php?view=b&id=<?php echo $box->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-arrow-right"></i></a>
 		</td>
 		<td>
 
@@ -49,7 +49,7 @@ $operations = OperationData::getAllProductsBySellId($sell->id);
 		$total_total += $total;
 		echo "<b>$ ".number_format($total,2,".",",")."</b>";
 
-?>			
+?>
 
 		</td>
 		<td><?php echo $box->created_at; ?></td>

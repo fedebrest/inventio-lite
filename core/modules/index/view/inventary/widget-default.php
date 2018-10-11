@@ -6,7 +6,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/inventary-word.php">Word 2007 (.docx)</a></li>
+  <!--  <li><a href="report/inventary-word.php">Word 2007 (.docx)</a></li> -->
   </ul>
 </div>
 		<h1><i class="glyphicon glyphicon-stats"></i> Inventario de Productos</h1>
@@ -47,7 +47,7 @@ if($px>0):
 <a class="btn btn-sm btn-default" href="<?php echo "index.php?view=inventary&limit=$limit&page=".($px); ?>"><i class="glyphicon glyphicon-chevron-left"></i> Atras </a>
 <?php endif; ?>
 
-<?php 
+<?php
 $px=$page+1;
 if($px<=$npaginas):
 ?>
@@ -69,7 +69,7 @@ if($px<=$npaginas):
 		<td><?php echo $product->id; ?></td>
 		<td><?php echo $product->name; ?></td>
 		<td>
-			
+
 			<?php echo $q; ?>
 
 		</td>

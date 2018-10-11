@@ -4,7 +4,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/onere-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li>
+  <!--  <li><a href="report/onere-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li> -->
   </ul>
 </div>
 <h1>Resumen de Reabastecimiento</h1>
@@ -22,7 +22,7 @@ if(isset($_COOKIE["selled"])){
 		// print "qx=$qx";
 			$p = $operation->getProduct();
 		if($qx==0){
-			echo "<p class='alert alert-danger'>El producto <b style='text-transform:uppercase;'> $p->name</b> no tiene existencias en inventario.</p>";			
+			echo "<p class='alert alert-danger'>El producto <b style='text-transform:uppercase;'> $p->name</b> no tiene existencias en inventario.</p>";
 		}else if($qx<=$p->inventary_min/2){
 			echo "<p class='alert alert-danger'>El producto <b style='text-transform:uppercase;'> $p->name</b> tiene muy pocas existencias en inventario.</p>";
 		}else if($qx<=$p->inventary_min){
@@ -79,7 +79,7 @@ $user = $sell->getUser();
 <br><br><h1>Total: $ <?php echo number_format($total,2,'.',','); ?></h1>
 	<?php
 
-?>	
+?>
 <?php else:?>
 	501 Internal Error
 <?php endif; ?>

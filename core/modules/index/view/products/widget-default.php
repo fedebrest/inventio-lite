@@ -7,7 +7,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/products-word.php">Word 2007 (.docx)</a></li>
+<!--    <li><a href="report/products-word.php">Word 2007 (.docx)</a></li> -->
   </ul>
 </div>
 </div>
@@ -50,7 +50,7 @@ if($px>0):
 <a class="btn btn-sm btn-default" href="<?php echo "index.php?view=products&limit=$limit&page=".($px); ?>"><i class="glyphicon glyphicon-chevron-left"></i> Atras </a>
 <?php endif; ?>
 
-<?php 
+<?php
 $px=$page+1;
 if($px<=$npaginas):
 ?>
@@ -84,7 +84,7 @@ if($px<=$npaginas):
 		<td><?php if($product->category_id!=null){echo $product->getCategory()->name;}else{ echo "<center>----</center>"; }  ?></td>
 		<td><?php echo $product->inventary_min; ?></td>
 		<td><?php if($product->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
-		
+
 
 		<td style="width:70px;">
 		<a href="index.php?view=editproduct&id=<?php echo $product->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
