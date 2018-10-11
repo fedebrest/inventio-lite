@@ -2,7 +2,7 @@
 	$found=true;
 $products = ProductData::getAll();
 foreach($products as $product){
-	$q=OperationData::getQYesF($product->id);	
+	$q=OperationData::getQYesF($product->id);
 	if($q<=$product->inventary_min){
 		$found=true;
 		break;
@@ -112,7 +112,7 @@ foreach($products as $product):
 		<td><?php echo $product->name; ?></td>
 		<td><?php echo $q; ?></td>
 		<td>
-		<?php if($q==0){ echo "<span class='label label-danger'>No hay existencias.</span>";}else if($q<=$product->inventary_min/2){ echo "<span class='label label-danger'>Quedan muy pocas existencias.</span>";} else if($q<=$product->inventary_min){ echo "<span class='label label-warning'>Quedan pocas existencias.</span>";} ?>
+		<?php if($q==0){ echo "<span class='label label-danger'>No hay Stock.</span>";}else if($q<=$product->inventary_min/2){ echo "<span class='label label-danger'>Queda muy poco Stock.</span>";} else if($q<=$product->inventary_min){ echo "<span class='label label-warning'>Queda poco Stock.</span>";} ?>
 		</td>
 	</tr>
 <?php endif;?>
