@@ -7,6 +7,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
   <!--  <li><a href="report/inventary-word.php">Word 2007 (.docx)</a></li> -->
+			<li><a href="report/inventary-pdf.php">PDF (.pdf)</a></li>
   </ul>
 </div>
 		<h1><i class="glyphicon glyphicon-stats"></i> Inventario de Productos</h1>

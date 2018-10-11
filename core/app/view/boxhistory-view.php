@@ -7,6 +7,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
   <!--  <li><a href="report/boxhistory-word.php">Word 2007 (.docx)</a></li> -->
+	<li><a href="report/boxhistory-pdf.php">PDF (.pdf)</a></li>
   </ul>
 </div>
 		<h1><i class='fa fa-archive'></i> Historial de Caja</h1>

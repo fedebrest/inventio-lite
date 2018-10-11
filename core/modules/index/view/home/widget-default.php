@@ -4,7 +4,7 @@ $products = ProductData::getAll();
 foreach($products as $product){
 	$q=OperationData::getQYesF($product->id);
 	if($q<$product->inventary_min){
-		$found=true;
+		$found=true;docx
 		break;
 
 	}
@@ -19,6 +19,7 @@ foreach($products as $product){
   </button>
   <ul class="dropdown-menu" role="menu">
 <!--    <li><a href="report/alerts-word.php">Word 2007 (.docx)</a></li> -->
+			<li><a href="report/alerts-pdf.php">PDF (.pdf)</a></li>
   </ul>
 </div>
 <?php endif;?>
