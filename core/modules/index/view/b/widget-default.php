@@ -14,7 +14,7 @@
   </ul>
 </div>
 </div>
-		<h1><i class='fa fa-archive'></i> Corte de Caja #<?php echo $_GET["id"]; ?></h1>
+		<h1><i class='fa fa-archive'></i> Cierre de Caja #<?php echo $_GET["id"]; ?></h1>
 		<div class="clearfix"></div>
 
 

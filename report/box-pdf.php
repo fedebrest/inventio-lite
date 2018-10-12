@@ -17,7 +17,7 @@ $clients = PersonData::getClients();
 
 
 $section1 = $word->AddSection();
-$section1->addText("CORTE DE CAJA #".$_GET["id"],array("size"=>22,"bold"=>true,"align"=>"right"));
+$section1->addText("CIERRE DE CAJA #".$_GET["id"],array("size"=>22,"bold"=>true,"align"=>"right"));
 
 $sells = SellData::getByBoxId($_GET["id"]);
 
