@@ -167,7 +167,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 3.0
         </div>
-        <strong>Copyright &copy; 2016 Fede Brest</strong>
+        <strong>Copyright &copy; 2018 Fede Brest</strong>
       </footer>
       <?php else:?>
 <div class="login-box">

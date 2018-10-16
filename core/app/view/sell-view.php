@@ -21,7 +21,7 @@
 $(document).ready(function(){
 	$("#searchp").on("submit",function(e){
 		e.preventDefault();
-		
+
 		$.get("./?action=searchproduct",$("#searchp").serialize(),function(data){
 			$("#show_search_results").html(data);
 		});
@@ -101,7 +101,7 @@ $product = ProductData::getById($p["product_id"]);
 <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Cliente</label>
     <div class="col-lg-10">
-    <?php 
+    <?php
 $clients = PersonData::getClients();
     ?>
     <select name="client_id" class="form-control">
@@ -131,11 +131,11 @@ $clients = PersonData::getClients();
 <table class="table table-bordered">
 <tr>
 	<td><p>Subtotal</p></td>
-	<td><p><b>$ <?php echo number_format($total*.84); ?></b></p></td>
+	<td><p><b>$ <?php echo number_format($total*.79); ?></b></p></td>
 </tr>
 <tr>
 	<td><p>IVA</p></td>
-	<td><p><b>$ <?php echo number_format($total*.16); ?></b></p></td>
+	<td><p><b>$ <?php echo number_format($total*.21); ?></b></p></td>
 </tr>
 <tr>
 	<td><p>Total</p></td>
@@ -172,7 +172,7 @@ $clients = PersonData::getClients();
 			e.preventDefault();
 		}else{
 			if(discount==""){ discount=0;}
-			go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
+			go = confirm("vuelto: $"+(money-(<?php echo $total;?>-discount ) ) );
 			if(go){}
 				else{e.preventDefault();}
 		}

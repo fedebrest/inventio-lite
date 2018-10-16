@@ -187,7 +187,7 @@ $clients = PersonData::getProviders();
 			alert("No se puede efectuar la operacion");
 			e.preventDefault();
 		}else{
-			go = confirm("Cambio: $"+(money-<?php echo $total;?>));
+			go = confirm("vuelto: $"+(money-<?php echo $total;?>));
 			if(go){}
 				else{e.preventDefault();}
 		}

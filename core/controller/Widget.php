@@ -3,7 +3,7 @@
 /**
 * Widget
 * Clase unica para el sistema Zard o probablemente pueda ser portada a otros sistemas o-o
-* @date 2016-09-18
+* @date 2018-10-16
 **/
 
 class Widget {

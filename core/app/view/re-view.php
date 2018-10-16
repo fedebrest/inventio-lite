@@ -126,7 +126,7 @@ $product = ProductData::getById($p["product_id"]);
 <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Proveedor</label>
     <div class="col-lg-10">
-    <?php 
+    <?php
 $clients = PersonData::getProviders();
     ?>
     <select name="client_id" class="form-control">
@@ -148,11 +148,11 @@ $clients = PersonData::getProviders();
 <table class="table table-bordered">
 <tr>
 	<td><p>Subtotal</p></td>
-	<td><p><b>$ <?php echo number_format($total*.84); ?></b></p></td>
+	<td><p><b>$ <?php echo number_format($total*.79); ?></b></p></td>
 </tr>
 <tr>
 	<td><p>IVA</p></td>
-	<td><p><b>$ <?php echo number_format($total*.16); ?></b></p></td>
+	<td><p><b>$ <?php echo number_format($total*.21); ?></b></p></td>
 </tr>
 <tr>
 	<td><p>Total</p></td>
@@ -187,7 +187,7 @@ $clients = PersonData::getProviders();
 			alert("No se puede efectuar la operacion");
 			e.preventDefault();
 		}else{
-			go = confirm("Cambio: $"+(money-<?php echo $total;?>));
+			go = confirm("vuelto: $"+(money-<?php echo $total;?>));
 			if(go){}
 				else{e.preventDefault();}
 		}
