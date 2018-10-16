@@ -61,7 +61,7 @@ if($product!=null):
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Precio de Salida*</label>
+    <label for="inputEmail1" class="col-lg-3 control-label">Precio de Venta*</label>
     <div class="col-md-8">
       <input type="text" name="price_out" class="form-control" id="price_out" value="<?php echo $product->price_out; ?>" placeholder="Precio de salida">
     </div>
@@ -90,7 +90,7 @@ if($product!=null):
     <div class="col-md-8">
 <div class="checkbox">
     <label>
-      <input type="checkbox" name="is_active" <?php if($product->is_active){ echo "checked";}?>> 
+      <input type="checkbox" name="is_active" <?php if($product->is_active){ echo "checked";}?>>
     </label>
   </div>
     </div>

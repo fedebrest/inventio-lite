@@ -1,4 +1,4 @@
-    <?php 
+    <?php
 $categories = CategoryData::getAll();
     ?>
 <div class="row">
@@ -48,7 +48,7 @@ $categories = CategoryData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Precio de Salida*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Precio de Venta*</label>
     <div class="col-md-6">
       <input type="text" name="price_out" required class="form-control" id="price_out" placeholder="Precio de salida">
     </div>

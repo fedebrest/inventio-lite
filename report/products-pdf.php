@@ -1,69 +1,55 @@
 <?php
-include "../core/autoload.php";
-include "../core/app/model/ProductData.php";
-include "../core/app/model/CategoryData.php";
 
-require_once '../PhpWord/Autoloader.php';
-use PhpOffice\PhpWord\Autoloader;
-use PhpOffice\PhpWord\Settings;
+require "fpdf.php";
+$db = new PDO('mysql:host=localhost;dbname=inventiolite','root','livepass');
 
-Autoloader::register();
-
-$word = new  PhpOffice\PhpWord\PhpWord();
-$products = ProductData::getAll();
-
-
-$section1 = $word->AddSection();
-$section1->addText("PRODUCTOS",array("size"=>22,"bold"=>true,"align"=>"right"));
-
-
-$styleTable = array('borderSize' => 6, 'borderColor' => '888888', 'cellMargin' => 40);
-$styleFirstRow = array('borderBottomColor' => '0000FF', 'bgColor' => 'AAAAAA');
-
-$table1 = $section1->addTable("table1");
-$table1->addRow();
-$table1->addCell()->addText("Id");
-$table1->addCell()->addText("Nombre");
-$table1->addCell()->addText("Precio Compra");
-$table1->addCell()->addText("Precio Venta");
-$table1->addCell()->addText("Unidad");
-$table1->addCell()->addText("Presentacion");
-$table1->addCell()->addText("Categoria");
-$table1->addCell()->addText("Minima en Inv.");
-$table1->addCell()->addText("Activo");
-foreach($products as $product){
-$table1->addRow();
-$table1->addCell(500)->addText($product->id);
-$table1->addCell(5000)->addText($product->name);
-$table1->addCell(2000)->addText($product->price_in);
-$table1->addCell(2000)->addText($product->price_out);
-$table1->addCell(2000)->addText($product->unit);
-$table1->addCell(2000)->addText($product->presentation);
-if($product->category_id!=null){
-	$table1->addCell(2000)->addText($product->getCategory()->name);
-
-}else{
-	$table1->addCell(2000)->addText("---");
-}
-$table1->addCell(2000)->addText($product->inventary_min);
-if($product->is_active){
-$table1->addCell(100)->addText("Si");
-}else{
-$table1->addCell(100)->addText("No");
-}
+class myPDF extends FPDF{
+    function header(){
+        $this->image('logo.png',10,6);
+        $this->SetFont('Arial','B',14);
+        $this->Cell(276,5,'Listado de Productos',0,0,'C');
+        $this->Ln();
+        $this->SetFont('Times','',12);
+        $this->Cell(276,10,utf8_decode('Librería X'),0,0,'C');
+        $this->Ln(20);
+    }
+    function footer(){
+        $this->SetY(-15);
+        $this->SetFont('Arial','',8);
+        $this->Cell(0,10,utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
+    }
+    function headerTable(){
+        $this->SetFont('Times','B',12);
+        $this->Cell(5,10,'Id',1,0,'C');
+        $this->Cell(30,10,'Nombre',1,0,'C');
+        $this->Cell(50,10,utf8_decode('Descripción'),1,0,'C');
+        $this->Cell(90,10,utf8_decode('Stock Mínimo'),1,0,'C');
+        $this->Cell(30,10,utf8_decode('Precio Compra'),1,0,'C');
+        $this->Cell(60,10,utf8_decode('Precio Venta'),1,0,'C');
+				$this->Cell(60,10,utf8_decode('Stock'),1,0,'C');
+        $this->Ln();
+    }
+    function viewTable($db){
+        $this->SetFont('Times','',12);
+        $stmt = $db->query('select * from product');
+			while($data = $stmt->fetch(PDO::FETCH_OBJ)){
+				$this->Cell(5,10,$data->id,1,0,'C');
+				$this->Cell(30,10,$data->name,1,0,'L');
+				$this->Cell(50,10,$data->description,1,0,'L');
+				$this->Cell(50,10,$data->inventary_min,1,0,'L');
+				$this->Cell(90,10,$data->price_in,1,0,'L');
+				$this->Cell(30,10,$data->price_out,1,0,'L');
+				$this->Cell(60,10,$data->unit,1,0,'L');
+				$this->Ln();
+			}
+    }
 }
 
-$word->addTableStyle('table1', $styleTable,$styleFirstRow);
-/// datos bancarios
-
-$filename = "products-".time().".docx";
-#$word->setReadDataOnly(true);
-$word->save($filename,"Word2007");
-//chmod($filename,0444);
-header("Content-Disposition: attachment; filename='$filename'");
-readfile($filename); // or echo file_get_contents($filename);
-unlink($filename);  // remove temp file
-
-
-
-?>
+$pdf = new myPDF();
+$pdf->AliasNbPages();
+$pdf->AddPage('L','A4',0);
+$pdf->headerTable();
+$pdf->viewTable($db);
+/*$filename = "inventary-".time().".pdf";
+$pdf->Output('D',$filename); */
+$pdf->Output();

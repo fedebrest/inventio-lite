@@ -72,7 +72,25 @@ if($px<=$npaginas):
 		<th></th>
 	</thead>
 	<?php foreach($curr_products as $product):?>
-	<tr>
+
+	<style>
+		.rojo{
+			background: #FF8A80;
+		}
+		.amarillo{
+			background: #FFFF8D;
+		}
+		.verde{
+			background: #B2FF59;
+		}
+	</style>
+
+	<tr class='<?php if($product->unit < $product->inventary_min){
+						echo "rojo";
+					} elseif ($product->unit > $product->inventary_min){
+						echo "verde";
+					} else{ echo "amarillo"; } ?>'>
+
 		<td><?php echo $product->barcode; ?></td>
 		<td>
 			<?php if($product->image!=""):?>

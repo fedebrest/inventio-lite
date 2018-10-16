@@ -69,7 +69,7 @@ $ototal = -1*OperationData::GetOutputQYesF($product->id);
 	?>
 <div class="jumbotron">
 <center>
-	<h2>Salidas</h2>
+	<h2>Ventas</h2>
 	<h1><?php echo $ototal; ?></h1>
 </center>
 </div>
