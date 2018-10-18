@@ -4,7 +4,7 @@ $products = ProductData::getAll();
 foreach($products as $product){
 	$q=OperationData::getQYesF($product->id);
 	if($q<$product->inventary_min){
-		$found=true;docx
+		$found=true;docx;
 		break;
 
 	}

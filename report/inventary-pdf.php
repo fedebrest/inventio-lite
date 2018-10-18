@@ -1,7 +1,7 @@
 <?php
 
 require "fpdf.php";
-$db = new PDO('mysql:host=localhost;dbname=inventiolite','root','livepass');
+$db = new PDO('mysql:host=localhost;dbname=inventiolite','root','');
 
 class myPDF extends FPDF{
     function header(){
