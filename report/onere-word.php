@@ -25,7 +25,7 @@ $user = $sell->getUser();
 
 
 $section1 = $word->AddSection();
-$section1->addText("RESUMEN DE REABASTECIMIENTO",array("size"=>22,"bold"=>true,"align"=>"right"));
+$section1->addText("RESUMEN DE REABASTECIMIENTO",array("size"=>22,"bold"=>true,"align"=>"center"));
 
 
 $styleTable = array('borderSize' => 6, 'borderColor' => '888888', 'cellMargin' => 40);
@@ -47,7 +47,7 @@ $section1->addText("");
 
 $table2 = $section1->addTable("table2");
 $table2->addRow();
-$table2->addCell(1000)->addText("Codigo");
+$table2->addCell(1000)->addText("Código");
 $table2->addCell(1000)->addText("Cantidad");
 $table2->addCell(6000)->addText("Nombre del producto");
 $table2->addCell(1000)->addText("P.U");

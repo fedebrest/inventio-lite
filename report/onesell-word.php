@@ -22,7 +22,9 @@ $user = $sell->getUser();
 
 
 $section1 = $word->AddSection();
-$section1->addText("RESUMEN DE VENTA",array("size"=>22,"bold"=>true,"align"=>"right"));
+$section1->addText("RESUMEN DE VENTA",array("size"=>22,"bold"=>true,"align"=>"center"));
+$section1->addText("Librería Shop",array("size"=>16,"bold"=>true,"align"=>"center"));
+$section1->addText("Las Madreselvas 44 B° Alta Barda - 8300 - Neuquén",array("size"=>12,"bold"=>true,"align"=>"center"));
 
 
 $styleTable = array('borderSize' => 6, 'borderColor' => '888888', 'cellMargin' => 40);
@@ -70,7 +72,7 @@ $word->addTableStyle('table2', $styleTable,$styleFirstRow);
 
 /// datos bancarios
 
-$filename = "onesell-".time().".docx";
+$filename = "venta-".time().".docx";
 #$word->setReadDataOnly(true);
 $word->save($filename,"Word2007");
 //chmod($filename,0444);

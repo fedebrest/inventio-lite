@@ -10,7 +10,7 @@ class myPDF extends FPDF{
         $this->Cell(276,5,'Listado de Proveedores',0,0,'C');
         $this->Ln();
         $this->SetFont('Times','',12);
-        $this->Cell(276,10,utf8_decode('librería Shop'),0,0,'C');
+        $this->Cell(276,10,utf8_decode('Librería Shop'),0,0,'C');
         $this->Ln(20);
     }
     function footer(){
